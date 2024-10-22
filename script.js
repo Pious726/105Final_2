@@ -1,24 +1,3 @@
-let questions = [
-    {
-        question: "Blah", 
-        answer: [
-            {text: "A",}
-        ]
-    },
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"},
-    {question: "Blah", answer: "Blah"}
-]
-let score = 0;
-let questionNumber = 0;
-let scoreElement = document.getElementById("score");
-let questionElement = document.getElementById("question");
 
 function reloadPage() {
     location.reload();
