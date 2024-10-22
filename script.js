@@ -5,39 +5,30 @@ let questions = [
 const quizContainer = document.getElementById('quiz');
 const scoreContainer = document.getElementById('score');
 const submitButton = document.getElementById('submit');
+);
 
 function makeQuiz() {
-
-    //stores html output
     const output = [];
-
-    Questions.forEach(
-        (currentQuestion, questionNumber) => {
-            //stores list of possible answers
-            const answers = [];
-
-            for(letter in currentQuestion.answers){
-
-                answers.push(
-                  `
-                <label>
+    questions.forEach((currentQuestion, questionNumber) => {
+        const answers = [];
+        for (letter in currentQuestion.answers) {
+            answers.push(
+                `<label>
                     <input type="radio" name="question${questionNumber}" value="${letter}">
-                     ${letter} :
-                     ${currentQuestion.answers[letter]}
-                </label>
-                  
-                  `
-                );
-            }
-
-            //adds question and answers to output
-            output.push(
-                `<div class="question"> ${currentQuestion.question} </div>
-                <div class="answers"> ${answers.join('')} </div>`
+                    ${letter} : ${currentQuestion.answers[letter]}
+                </label>`
             );
         }
-    )
+        output.push(
+            `<div class="question">${currentQuestion.question}</div>
+             <div class="answers">${answers.join('')}</div>`
+        );
+    });
+    quizContainer.innerHTML = output.join('');
 }
+
+
+
 const Questions = [
 {
     question: "Who Wrote the Declaration of Independence?",
