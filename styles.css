@@ -25,15 +25,12 @@ form {
     text-align: left;
     box-shadow: 2px 5px 10px #000;
 }
-
 input {
     margin: 5px 0;
 }
-
 #question {
     margin: 0 0 20px 0;
 }
-
 #submit {
     background-color: blueviolet;
     color: #FFF;
