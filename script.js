@@ -94,7 +94,7 @@ const questions = [
 
 
 {
-    question: "When did the Founders sign the declaration of independence",
+    question: "When did the Founders sign the Declaration of Independence?",
     answers: {
         a:"July 2, 1776",
         b:"August 2, 1776",
@@ -106,10 +106,10 @@ const questions = [
 
 
 {
-    question: "Who was called the 'Father of the Constitution' ",
+    question: "Who was called the 'Father of the Constitution'? ",
     answers: {
         a:"Alexander Hamilton",
-        b:"ThomasJefferson",
+        b:"Thomas Jefferson",
         c:"James Madison",
         d: "John Adams",
     },
