@@ -17,14 +17,8 @@ let questions = [
 ]
 let score = 0;
 let questionNumber = 0;
-let scoreElement = document.getElementsById("score");
+let scoreElement = document.getElementById("score");
 let questionElement = document.getElementById("question");
-
-
-function startQuiz() {
-    let question = questions[currentQuestion];
-    questionElement.textContent = question.question;
-}
 
 function reloadPage() {
     location.reload();
@@ -35,6 +29,10 @@ function showCompletedScore() {
     congratulation.innerHTML = "You completed all of the questions!";
     let finalScore = document.createElement("p");
     finalScore.innerHTML = `Your final score was ${score} out of 5.`;
+    let reloadButton = document.createElement("button");
+    reloadButton.innerHTML = "Reset Quiz";
+    reloadButton.classList.add("reset")
+    reloadButton.addEventListener('click', reloadPage);
 }
 
-startQuiz()
+showCompletedScore()
