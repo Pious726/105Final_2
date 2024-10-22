@@ -1,11 +1,9 @@
-let questions = [
-    {}
-]
+
 
 const quizContainer = document.getElementById('quiz');
 const scoreContainer = document.getElementById('score');
 const submitButton = document.getElementById('submit');
-);
+
 
 function makeQuiz() {
     const output = [];
@@ -27,9 +25,24 @@ function makeQuiz() {
     quizContainer.innerHTML = output.join('');
 }
 
+function checkAnswers(event) {
+    event.preventDefault();
+    let score = 0;
+    questions.forEach((currentQuestion, questionNumber) => {
+        const answerContainer = quizContainer.querySelectorAll('.answers')[questionNumber];
+        const userAnswer = (answerContainer.querySelector(`input[name=question${questionNumber}]:checked`) || {}).value;
+        if (userAnswer === currentQuestion.correctAnswer) {
+            score++;
+        }
+    });
 
 
-const Questions = [
+}
+
+submitButton.addEventListener('click', checkAnswers);
+document.addEventListener('DOMContentLoaded', makeQuiz);
+
+const questions = [
 {
     question: "Who Wrote the Declaration of Independence?",
     answers: {
