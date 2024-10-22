@@ -26,6 +26,10 @@ function startQuiz() {
     questionElement.textContent = question.question;
 }
 
+function reloadPage() {
+    location.reload();
+}
+
 function showCompletedScore() {
     let congratulation = document.createElement("p");
     congratulation.innerHTML = "You completed all of the questions!";
