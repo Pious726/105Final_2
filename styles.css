@@ -28,7 +28,7 @@ input {
 #question {
     margin: 0 0 20px 0;
 }
-#submit {
+#submit, .reset {
     background-color: blueviolet;
     color: #FFF;
     width: 40%;

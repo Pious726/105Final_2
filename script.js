@@ -1,5 +1,3 @@
-
-
 const quizContainer = document.getElementById('quiz');
 const scoreContainer = document.getElementById('score');
 const submitButton = document.getElementById('submit');
@@ -26,7 +24,9 @@ function makeQuiz() {
 }
 
 function checkAnswers(event) {
-    event.preventDefault();
+    if (event) {
+        event.preventDefault();
+    }
     let score = 0;
     questions.forEach((currentQuestion, questionNumber) => {
         const answerContainer = quizContainer.querySelectorAll('.answers')[questionNumber];
@@ -35,11 +35,13 @@ function checkAnswers(event) {
             score++;
         }
     });
-
-
+    return score;
 }
 
-submitButton.addEventListener('click', checkAnswers);
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    endQuiz();
+});
 document.addEventListener('DOMContentLoaded', makeQuiz);
 
 const questions = [
@@ -104,3 +106,26 @@ const questions = [
 
 
 ];
+
+function reloadPage() {
+    location.reload();
+}
+
+function endQuiz() {
+    let score = checkAnswers();
+    let congratulations = document.createElement("p");
+    congratulations.innerHTML = "You completed all of the questions!";
+    let finalScore = document.createElement("p");
+    finalScore.innerHTML = `Your final score was ${score} out of ${questions.length}.`;
+    let reloadButton = document.createElement("button");
+    reloadButton.innerHTML = "Reset Quiz";
+    reloadButton.classList.add("reset")
+    reloadButton.addEventListener('click', reloadPage);
+    submitButton.remove();
+
+    quizContainer.innerHTML = "";
+
+    quizContainer.appendChild(congratulations);
+    quizContainer.appendChild(finalScore);
+    quizContainer.appendChild(reloadButton);
+}
