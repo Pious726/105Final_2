@@ -47,7 +47,7 @@ submitButton.addEventListener('click', (event) => {
         if (!userAnswer) {
             questionsAnswered = false;
         }
-    });
+    })
     if (!questionsAnswered) {
         alert("Please answer all questions first.");
     } else {

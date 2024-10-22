@@ -22,8 +22,12 @@ form {
     text-align: left;
     box-shadow: 2px 5px 10px #000;
 }
-input {
-    margin: 5px 0;
+div.question {
+    font-weight: bold;
+}
+label {
+    margin: 10px 0;
+    display: block;
 }
 #submit, .reset {
     background-color: blueviolet;
