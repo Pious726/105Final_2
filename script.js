@@ -40,7 +40,20 @@ function checkAnswers(event) {
 
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-    endQuiz();
+    let questionsAnswered = true;
+    questions.forEach((currentQuestion, questionNumber) => {
+        let answerContainer = quizContainer.querySelectorAll(".answers")[questionNumber];
+        let userAnswer = answerContainer.querySelector(`input[name=question${questionNumber}]:checked`);
+        if (!userAnswer) {
+            questionsAnswered = false;
+        }
+    })
+
+    if (!questionsAnswered) {
+        alert("Please answer all questions first.");
+    } else {
+        endQuiz();
+    }
 });
 document.addEventListener('DOMContentLoaded', makeQuiz);
 
