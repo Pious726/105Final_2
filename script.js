@@ -101,10 +101,12 @@ function reloadPage() {
 }
 
 function endQuiz() {
+    let submit = document.getElementById("submit");
+    submit.style.display = "none";
     quizContainer.innerHTML = `
     <p>You completed all of the questions!</p>
     <p>Your final score was ${score} out of ${questions.length}.</p>
-    <button onclick="reloadPage()">Reset Quiz</button>
+    <button class="reset" onclick="reloadPage()">Reset Quiz</button>
     `;
 }
 
