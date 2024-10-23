@@ -86,6 +86,14 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener('click', () => {
+    const answerContainer = quizContainer.querySelector('.answers');
+    const userAnswer = (answerContainer.querySelector(`input[name=question]:checked`) || {}).value;
+
+    if(!userAnswer) {
+        alert("Please select an answer before moving to the next question.");
+        return;
+    }
+
     checkAnswer();
     currentQuestionIndex++;
 
